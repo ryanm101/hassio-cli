@@ -26,8 +26,7 @@ matrix:
     - upx --brute hassiocli*
     deploy:
       provider: releases
-      api_key:
-        secure: c7oS5NoSOB0XIMQRSZ174j5f/g5Yw6KHinvnV0httjVr9KEdqNd0AobrXqkeIvfiiBwoOG13x7KNshLGT8MWoxzG/tVEFniLa+aFTR/PbGbJW5YovDaiiz2wjpKltXoNwacvRD+pzj2HKxs2efhZdM1AB1onZCsmeCk4joXjKYiyAnFsjMikD2JEjJqtGF+38dcYIt/QBd1XwuA1LcHh4nzGD3TniG/dsCBrzx1hVR8mnOvQOjpG/FO6hOwUZ85zHKtBE+QBsoFkHX8PSH4DXwhJqAhQVbzB7o2ZaR7zAluwZ13mYZee9xP45j2SkvEPq0qEL72/MNpKWe5nOa+/PkgKL1Z7NjDfLZgP7hsY7K9MKwnkTID2DqtC6ZW9RJFOW3+vZ1GATPhvjXG0bduG1bUvi59O3cnXA2hTA/XlICnWGhypWtG0ClzUPguKeBOx9oK4yb1v+D6e0ofQ6HN/jLh0fT04DOLZ6M1vRQoy8tno4sD+1fLNQqFEW/5VlSYuFomA9c8X913nIMRZnTrgtCgS0jAGEZanj8ZpGa2EBxxVFS/qcA/nQZDjTn6JsQ8apf/VSKIEtfdgwsr8kwuj++Z8Tfx8sOc2TwWeg5YpIgefGVqiPtV3tPEZTx6XvhBYfOsh9Rvx98Odk3UJuxA7OZifw+JhkQ4OyBK4O+tDSzU=
+      github_token: $github_token
       file_glob: true
       file: hassiocli*
       skip_cleanup: true
