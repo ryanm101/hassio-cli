@@ -13,8 +13,7 @@ matrix:
   - go: 1.7.x
   - go: 1.7.x
     env: DEPLOY:True
-    install: apt-get install gox upx
-    language: bash
+    install: sudo apt-get install gox upx
     before_deploy:
     - gox -osarch="linux/amd64 linux/arm linux/arm64" -ldflags="-s -w" -output="hassiocli_{{.Arch}}"
     - upx --brute hassiocli*
