@@ -20,9 +20,9 @@ matrix:
           - upx
     before_deploy:
     - gox -osarch="linux/amd64 linux/arm linux/arm64" -ldflags="-s -w" -output="hassiocli_{{.Arch}}"
+    - go build -ldflags="-s -w" -o "hassiocli_x64"
     - GOARCH=arm go build -ldflags="-s -w" -o "hassiocli_arm"
     - GOARCH=arm64 go build -ldflags="-s -w" -o "hassiocli_arm64"
-    - GOARCH=amd64 go build -ldflags="-s -w" -o "hassiocli_x64"
     - upx --brute hassiocli*
     deploy:
       provider: releases
