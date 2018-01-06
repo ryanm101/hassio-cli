@@ -1,16 +1,16 @@
 package command
 
 import (
-    "fmt"
-
-    "github.com/home-assistant/hassio-cli/command/helpers"
     "github.com/urfave/cli"
+    "fmt"
+    "github.com/home-assistant/hassio-cli/command/helpers"
     "os"
     "strings"
 )
 
-func CmdHomeassistant(c *cli.Context) {
-    const HassioBasePath = "homeassistant"
+// CmdNetwork All network endpoints for hass.io
+func CmdNetwork(c *cli.Context) {
+    const HassioBasePath = "network"
     action := ""
     endpoint := ""
     serverOverride := ""
@@ -20,15 +20,10 @@ func CmdHomeassistant(c *cli.Context) {
     }
 
     switch action {
-    case "info",      // GET
-        "logs":
+    case "info":        // GET
         endpoint = action
         get = true
-    case "check",     // POST
-        "restart",
-        "start",
-        "stop",
-        "update":
+    case "options":     // POST
         endpoint = action
     default:
         fmt.Fprintf(os.Stderr, "No valid action detected")
