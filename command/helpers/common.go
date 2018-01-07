@@ -58,10 +58,13 @@ func RestCall(uri string, bGet bool, payload string) []byte {
     if DebugEnabled {
         fmt.Fprintf(os.Stdout, "DEBUG [RestCall]: data->'%s', GET->'%t', payload->'%s'\n", uri, bGet, payload)
     }
-
+    fmt.Fprintf(os.Stdout, "A")
     if bGet {
+        fmt.Fprintf(os.Stdout, "B")
         request, err = http.NewRequest("GET", uri, nil)
+        fmt.Fprintf(os.Stdout, "C")
         request.Header.Add("X_HASSIO_KEY", os.Getenv("X-HASSIO-KEY"))
+        fmt.Fprintf(os.Stdout, "D")
     } else {
         jsonValue := []byte("")
         if payload != "" {
@@ -73,14 +76,16 @@ func RestCall(uri string, bGet bool, payload string) []byte {
         request.Header.Add("X-HASSIO-KEY", os.Getenv("X-HASSIO-KEY"))
         request.Header.Add("contentType", "application/json")
     }
-
     response, err = client.Do(request)
+    fmt.Fprintf(os.Stdout, "D")
     defer response.Body.Close()
+    fmt.Fprintf(os.Stdout, "E")
 
     if err != nil {
         fmt.Fprintf(os.Stderr, "The HTTP request failed with the error: %s\n", err)
         os.Exit(1)
     }
+    fmt.Fprintf(os.Stdout, "F")
     data, _ := ioutil.ReadAll(response.Body)
     if DebugEnabled {
         fmt.Fprintf(os.Stdout, "DEBUG [RestCall]: ResponseBody->'%s'\n", string(data))
