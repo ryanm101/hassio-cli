@@ -1,6 +1,1 @@
-package main
-
-// Name the name of the CLI
-const Name string = "hassio"
-// Version the current version of the CLI
-const Version string = "1.4.0Dev"
+cGFja2FnZSBtYWluCgovLyBOYW1lIHRoZSBuYW1lIG9mIHRoZSBDTEkKY29uc3QgTmFtZSBzdHJpbmcgPSAiaGFzc2lvIgovLyBWZXJzaW9uIHRoZSBjdXJyZW50IHZlcnNpb24gb2YgdGhlIENMSQpjb25zdCBWZXJzaW9uIHN0cmluZyA9ICIxLjMuNCIK
